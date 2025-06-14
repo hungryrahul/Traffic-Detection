@@ -11,7 +11,7 @@ app = func.FunctionApp()
 
 @app.blob_trigger(arg_name="myblob", 
                   path="trafficmanagementcontainer/{name}",
-                  connection="trafficdetection_STORAGE")
+                  connection="AzureWebJobsStorage")
 def TrafficDetectionBlobTrigger(myblob: func.InputStream, name: str):
     try:
         logging.info(f"Processing blob: {name} ({myblob.length} bytes)")
