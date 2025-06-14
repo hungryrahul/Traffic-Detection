@@ -1,0 +1,4 @@
+azure-functions
+ultralytics
+pandas
+opencv-python-headless
