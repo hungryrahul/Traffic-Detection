@@ -10,8 +10,8 @@ from azure.storage.blob import BlobServiceClient
 app = func.FunctionApp()
 
 @app.blob_trigger(arg_name="myblob", 
-                  path="trafficmanagementcontainer/{name}",
-                  connection="trafficdetection_STORAGE")
+                  path="trafficdetection/{name}",
+                  connection="AzureWebJobsStorage")
 def TrafficDetectionBlobTrigger(myblob: func.InputStream, name: str):
     try:
         logging.info(f"Processing blob: {name} ({myblob.length} bytes)")
@@ -103,7 +103,7 @@ def TrafficDetectionBlobTrigger(myblob: func.InputStream, name: str):
         logging.info(result_df.head().to_string())
 
         # Upload CSV to Blob
-        blob_conn_str = os.environ["trafficdetection_STORAGE"]
+        blob_conn_str = os.environ["AzureWebJobsStorage"]
         blob_service_client = BlobServiceClient.from_connection_string(blob_conn_str)
         result_container = "csv-results"
 
