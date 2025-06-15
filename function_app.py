@@ -5,7 +5,7 @@ import math
 import azure.functions as func
 import logging
 import os
-from azure.storage.blob import BlobServiceClient
+# from azure.storage.blob import sBlobServiceClient
 
 app = func.FunctionApp()
 
