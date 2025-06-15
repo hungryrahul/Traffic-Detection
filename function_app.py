@@ -14,7 +14,7 @@ app = func.FunctionApp()
                   connection="AzureWebJobsStorage")
 def TrafficDetectionBlobTrigger(myblob: func.InputStream, name: str):
     try:
-        logging.info(f"Processing blob: {name} ({myblob.length} bytess)")
+        logging.info(f"Processing blob: {name} ({myblob.length} bytesss)")
         temp_video_path = f"/tmp/{name}"
 
         with open(temp_video_path, "wb") as f:
