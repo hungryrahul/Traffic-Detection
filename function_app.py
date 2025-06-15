@@ -8,7 +8,7 @@ import os
 from azure.storage.blob import BlobServiceClient
 
 app = func.FunctionApp()
-@app.function_name(name="traffic-trigger-function")
+@app.function_name(name="trafficcontrolpocfuncapp")
 @app.blob_trigger(
     arg_name="myblob",
     path="videouploadcontainer/{name}",  # Change to your container name
