@@ -8,7 +8,7 @@ import os
 from azure.storage.blob import BlobServiceClient
 
 app = func.FunctionApp()
-
+@app.function_name(name="traffic-trigger-function")
 @app.blob_trigger(
     arg_name="myblob",
     path="trafficdetection/{name}",  # Change to your container name
@@ -16,7 +16,7 @@ app = func.FunctionApp()
 )
 def log_blob_name(myblob: func.InputStream, name: str):
     logging.info(f"🚀 Blob trigger activated.")
-    logging.info(f"📦 File Name: {name}")
+    logging.info(f"📦 File Name: {myblob.name}")
     logging.info(f"📏 File Size: {myblob.length} bytes")
 
 
