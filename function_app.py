@@ -11,8 +11,8 @@ app = func.FunctionApp()
 @app.function_name(name="traffic-trigger-function")
 @app.blob_trigger(
     arg_name="myblob",
-    path="trafficdetection/{name}",  # Change to your container name
-    connection="AzureWebJobsStorage"
+    path="videouploadcontainer/{name}",  # Change to your container name
+    connection="CUSTOM_BLOB_STORAGE"
 )
 def log_blob_name(myblob: func.InputStream, name: str):
     logging.info(f"🚀 Blob trigger activated.")
