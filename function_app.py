@@ -8,12 +8,13 @@ import os
 from azure.storage.blob import BlobServiceClient
 
 app = func.FunctionApp()
-@app.function_name(name="trafficcontrolpocfuncapp")
+
 @app.blob_trigger(
     arg_name="myblob",
     path="videouploadcontainer/{name}",  # Change to your container name
     connection="CUSTOM_BLOB_STORAGE"
 )
+@app.function_name(name="trafficcontrolpocfuncapp")
 def log_blob_name(myblob: func.InputStream, name: str):
     logging.info(f"🚀 Blob trigger activated.")
     logging.info(f"📦 File Name: {myblob.name}")
