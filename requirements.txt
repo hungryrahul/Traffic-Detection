@@ -1,13 +1,6 @@
 azure-functions
 azure-functions-worker
 azure-storage-blob
-ultralytics==8.0.196
-opencv-python-headless==4.8.1.78
-pandas==2.0.3
-torch==2.0.1+cpu --find-links https://download.pytorch.org/whl/torch_stable.html
-torchvision==0.15.2+cpu --find-links https://download.pytorch.org/whl/torch_stable.html
-grpcio==1.57.0
-protobuf==4.24.4
-PyYAML==6.0.1
-Pillow==10.0.1
-numpy==1.24.3
+ultralytics
+pandas
+opencv-python-headless
