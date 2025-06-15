@@ -14,7 +14,7 @@ app = func.FunctionApp()
 @app.blob_trigger(arg_name="myblob", 
                   path="videouploadcontainer/{name}",
                   connection="CUSTOM_BLOB_STORAGE")
-@app.function_name(name="trafficcontrolpocfuncapp")
+
 def TrafficDetectionBlobTrigger(myblob: func.InputStream, name: str):
     try:
         logging.info(f"Processing blob: {name} ({myblob.length} bytesss)")

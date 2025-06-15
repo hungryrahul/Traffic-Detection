@@ -1,4 +1,10 @@
 azure-functions
+azure-functions-worker
+azure-storage-blob
 ultralytics
-pandas
 opencv-python-headless
+pandas
+PyYAML
+Pillow
+torch
+torchvision
