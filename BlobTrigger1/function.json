@@ -1,0 +1,10 @@
+{
+    "scriptFile":"__init__.py",
+    "bindings":[{
+        "name": "myBlob",
+        "type": "blobTrigger",
+        "direction": "in",
+        "path": "videouploadcontainer/{name}",
+        "connection": "CUSTOM_BLOB_STORAGE"
+    }]
+}
