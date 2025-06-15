@@ -8,7 +8,7 @@ app = func.FunctionApp()
     path="videouploadcontainer/{name}",
     connection="CUSTOM_BLOB_STORAGE"
 )
-@app.function_name(name="trafficcontrolpocfuncapp")
-def trafficcontrolpocfuncapp(myblob: func.InputStream, name: str):
+@app.function_name(name="process_blob_video")
+def process_blob_video(myblob: func.InputStream, name: str):
     logging.info(f"🚀 Triggered by: {name}")
     logging.info(f"📏 Size: {myblob.length} bytes")
