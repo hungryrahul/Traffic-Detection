@@ -6,7 +6,7 @@ app = func.FunctionApp()
 @app.blob_trigger(
     arg_name="myblob",
     path="videouploadcontainer/{name}",
-    connection="CUSTOM_BLOB_STORAGE"
+    connection="AzureWebJobsStorage"
 )
 @app.function_name(name="process_blob_video")
 def process_blob_video(myblob: func.InputStream, name: str):
