@@ -46,7 +46,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          include-hidden-files: true
           path: |
             release.zip
             !venv/
@@ -70,9 +69,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_08923EB274764D2CAE9F97279CDCFEFB }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B04694A682884AA1887CCBD16959832F }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7D6EBEDF7EB648C38FA41D8D4BA0EF8E }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1B578E7787014094862AE75BEF73366C }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9D1F2D4CC3EE4A44B8583B90B045B484 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A47237561AE64CF4BCCCB2A041767D1F }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
