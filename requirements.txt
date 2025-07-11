@@ -1,1 +1,12 @@
-azure-functions
+# requirements.txt for container
+ultralytics==8.0.196
+opencv-python==4.8.1.78
+pandas==2.1.3
+azure-storage-blob==12.19.0
+azure-storage-queue==12.8.0
+numpy==1.24.3
+Pillow==10.0.1
+requests==2.31.0
+torch==2.1.0
+torchvision==0.16.0
+
